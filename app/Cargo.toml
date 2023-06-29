@@ -9,7 +9,7 @@ edition = "2021"
 actix-web = "^4"
 dotenvy = "0.15.7"
 sqlx = { version = "^0.6", features = [
-    "postgres",
+    "mysql",
     "runtime-actix",
     "runtime-actix-rustls",
     "macros",

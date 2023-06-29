@@ -1,11 +1,11 @@
 mod util;
 
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
-use sqlx::{Pool, Postgres};
+use sqlx::{Pool, MySql};
 use std::env;
 use util::create_db_conn_pool;
 
-type DbPool = Pool<Postgres>;
+type DbPool = Pool<MySql>;
 
 #[cfg(debug_assertions)]
 use dotenvy::dotenv;
