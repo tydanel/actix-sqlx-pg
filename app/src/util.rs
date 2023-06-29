@@ -8,7 +8,7 @@ use super::DbPool;
 ///
 /// Will return the configured connection pool or panic.
 pub async fn create_db_conn_pool(db_conn_url: &String, max_connections: u32) -> DbPool {
-    let conn = sqlx::MySqlPool::connect(&database_url)
+    let conn = sqlx::MySqlPool::connect(&db_conn_url)
         .await.unwrap();
     // PgPoolOptions::new()
     //     .max_connections(max_connections)
