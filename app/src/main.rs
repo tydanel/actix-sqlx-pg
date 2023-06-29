@@ -23,7 +23,7 @@ async fn hello() -> impl Responder {
 #[get("/sum")]
 async fn query(pool: web::Data<DbPool>) -> impl Responder {
     struct Sum {
-        sum: Option<i32>,
+        sum: i64,
     }
 
     let query = sqlx::query_as!(Sum, "SELECT 5 + 5 as sum")
