@@ -32,11 +32,11 @@ async fn query(pool: web::Data<DbPool>) -> impl Responder {
 
     match query {
         Ok(row) => {
-            if let Some(sum) = row.sum {
-                HttpResponse::Ok().body(format!("Result: {}", sum))
-            } else {
-                HttpResponse::NotFound().body("Not found")
-            }
+            // if let sum = row.sum {
+            HttpResponse::Ok().body(format!("Result: {}", row.sum))
+            // } else {
+            //     HttpResponse::NotFound().body("Not found")
+            // }
         }
         Err(_) => HttpResponse::NotFound().body(format!("Not found")),
     }
